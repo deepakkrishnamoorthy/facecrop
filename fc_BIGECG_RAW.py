@@ -277,11 +277,11 @@ def SkinDetectionAndResizing(loadingPath:str,savingPath:str,newsize:int,saveskin
                     frameRESIZED = cv2.resize(frame,(newsize,newsize), interpolation = cv2.INTER_AREA)
                     #a = frameRESIZED.shape[0]
                     #print(a)
-                    frameRESIZED = frameRESIZED[:,:,0]
+                    frameRESIZED = frameRESIZED[:,:,:]
                     #a = frameRESIZED.shape
                     #print(a)
                     #a1=frameRESIZED.shape[0]
-                    frameRESIZED=np.reshape(frameRESIZED,(8,8,1))
+                    frameRESIZED=np.reshape(frameRESIZED,(8,8,3))
                     #frameRESIZED = (frameRESIZED - np.min(frameRESIZED)) / (np.max(frameRESIZED) - np.min(frameRESIZED))
                     #frameRESIZED = frameRESIZED.astype(float)
                     maskRESIZED = cv2.resize(mask,(newsize,newsize), interpolation = cv2.INTER_AREA)
